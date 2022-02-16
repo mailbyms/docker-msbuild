@@ -11,7 +11,7 @@
 `docker run --rm -it -v c:\src:c:\src mailbyms/msbuild:2019 cmd `
 
 # drone 流水线配置
-> 一般此镜像只作为基础镜像，项目使用此镜像之上另外集成 sonar-scanner 的 `mailbyms/msbuild-sonar:2019`
+> 一般此镜像只作为基础镜像，项目使用此镜像之上另外集成 sonar-scanner 的 `mailbyms/msbuild-sonar:2019`  
 > 下面的示例把项目原来的 .net Framework 版本定义，由 4.6.2 改为 镜像里的 4.7.2
 
 ```
