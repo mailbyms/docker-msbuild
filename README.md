@@ -12,6 +12,7 @@
 
 # drone 流水线配置
 > 一般此镜像只作为基础镜像，项目使用此镜像之上另外集成 sonar-scanner 的 `mailbyms/msbuild-sonar:2019`
+> 下面的示例把项目原来的 .net Framework 版本定义，由 4.6.2 改为 镜像里的 4.7.2
 
 ```
 steps:
@@ -19,7 +20,7 @@ steps:
     image: mailbyms/msbuild:2019
     pull: if-not-exists
     commands:
-      - (Get-Content xxx.csproj) -replace "TargetFrameworkVersion>v4.6.2<","TargetFrameworkVersion>v4.7.2<" | Set-Content xxx.csproj
+      - gci -r -include "App.config","*.csproj"| foreach-object { $a = $_.fullname; ( get-content $a ) | foreach-object { $_ -replace "4.6.2","4.7.2" }  | set-content $a }
       - nuget restore
       - MSBuild.exe  /t:Rebuild
 ```
