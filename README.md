@@ -1,5 +1,7 @@
 # 说明
-- Visual Studio 对应的 MSBuild 工具，.net 编译工具。参考了：<https://github.com/compulim/docker-msbuild>
+- Visual Studio 对应的 MSBuild 工具，.net 编译工具。参考了：
+  - <https://github.com/compulim/docker-msbuild>
+  - <https://docs.microsoft.com/en-us/visualstudio/install/build-tools-container?view=vs-2019>
 
 - 可以编译 `.NET Framework`, `.NET Core`, `C#`, `F#`, `C++`, and `web` 项目。预装了 `Nuget 6.0.0`，`.NET Framework SDK 4.7.2`。编译项目前，要修改项目的 .csproj 文件，把 `TargetFrameworkVersion` 改为 `v4.7.2`
 
